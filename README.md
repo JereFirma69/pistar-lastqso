@@ -119,7 +119,8 @@ WPSD is designed as an "appliance" with **strict filesystem management**:
 
 WPSD recommends using `/opt/` for third-party/unmanaged software (it's not touched during updates).
 
-Do this once (in a writable session):
+Do this once and repeat after each update / reinstall
+(in a writable session):
 
 ```
 1. Make root writable (if not already)

@@ -3176,6 +3176,12 @@ fnSHOW_CURRENT_CALL()
   # the "9A3COX" callsign, to perform our lookups.
   SEARCH_FROM="$(fnCHOP_CALL "${FROM}")"
 
+  # Clean SEARCH_FROM for reliable matching
+  SEARCH_FROM="${SEARCH_FROM// /}"           # remove spaces
+  SEARCH_FROM="${SEARCH_FROM//_/}"           # remove underscores (common in YSF/DMR logs)
+  SEARCH_FROM="${SEARCH_FROM//-*/}"          # remove any suffix after -
+  SEARCH_FROM="${SEARCH_FROM^^}"             # force uppercase (callsign standard)
+
   # Search the CSV files for the "From" name
   if ! [[ "${SEARCH_FROM}" =~ ^[0-9]+$ ]]
   then
@@ -3266,13 +3272,12 @@ fnSHOW_CURRENT_CALL()
   then
     QTH_SRC="user.csv"
     # Search the CSV files for the "From" name
-    if ! [[ "${SEARCH_FROM}" =~ ^[0-9]+$ ]]
-    then
-      # the "From" contains letters (a callsign)
-      CSV_RECORD="$(grep ",${SEARCH_FROM}," "${USERCSV}" | LC_ALL=C sort -u | head -1)"
+    if ! [[ "${SEARCH_FROM}" =~ ^[0-9]+$ ]]; then
+      # Callsign branch - case-insensitive + optional spaces around callsign
+      CSV_RECORD="$(grep -i ", *${SEARCH_FROM} *," "${USERCSV}" | LC_ALL=C sort -u | head -1)"
     else
-      # the "From" is numeric only (not a callsign)
-      CSV_RECORD="$(grep "^${SEARCH_FROM}," "${USERCSV}" | LC_ALL=C sort -u | head -1)"
+      # ID branch
+      CSV_RECORD="$(grep -E "^${SEARCH_FROM}," "${USERCSV}" | LC_ALL=C sort -u | head -1)"
     fi
   fi
   if [[ "${LOGREC_MODE}" != "DMR" ]]
@@ -3282,13 +3287,12 @@ fnSHOW_CURRENT_CALL()
     then
       QTH_SRC="NXDN.csv"
       # Search the CSV files for the "From" name
-      if ! [[ "${SEARCH_FROM}" =~ ^[0-9]+$ ]]
-      then
-        # the "From" contains letters (a callsign)
-        CSV_RECORD="$(grep ",${SEARCH_FROM}," "${NXDNCSV}" | LC_ALL=C sort -u | head -1)"
+      if ! [[ "${SEARCH_FROM}" =~ ^[0-9]+$ ]]; then
+        # Callsign branch - case-insensitive + optional spaces
+        CSV_RECORD="$(grep -i ", *${SEARCH_FROM} *," "${NXDNCSV}" | LC_ALL=C sort -u | head -1)"
       else
-        # the "From" is numeric only (not a callsign)
-        CSV_RECORD="$(grep "^${SEARCH_FROM}," "${NXDNCSV}" | LC_ALL=C sort -u | head -1)"
+        # ID branch
+        CSV_RECORD="$(grep -E "^${SEARCH_FROM}," "${NXDNCSV}" | LC_ALL=C sort -u | head -1)"
       fi
     fi
   fi
@@ -3299,14 +3303,12 @@ fnSHOW_CURRENT_CALL()
   COUNTRY=""
 
   # If we have a hit from either file, set the CITY, STATE, and COUNTRY
-  if [[ "${CSV_RECORD}" != "" ]]
-  then
-    # Callsign was found in one or the other csv file
-    IFS=','; CUT_ARRAY=(${CSV_RECORD}); unset IFS;
-    CITY="${CUT_ARRAY[4]}"
-    STATE="${CUT_ARRAY[5]}"
-    COUNTRY="${CUT_ARRAY[6]}"
-    unset CUT_ARRAY
+  if [[ -n "${CSV_RECORD}" ]]; then
+    QTH_SRC="${QTH_SRC:-user.csv}"  # fallback if not set earlier
+    # Use awk for safe field extraction (handles quoted fields, spaces, empty LAST_NAME)
+    CITY=$(echo "${CSV_RECORD}" | awk -F',' '{gsub(/^[ \t"]+|[ \t"]+$/,"",$5); print $5 ? $5 : "n/a"}')
+    STATE=$(echo "${CSV_RECORD}" | awk -F',' '{gsub(/^[ \t"]+|[ \t"]+$/,"",$6); print $6 ? $6 : "n/a"}')
+    COUNTRY=$(echo "${CSV_RECORD}" | awk -F',' '{gsub(/^[ \t"]+|[ \t"]+$/,"",$7); print $7 ? $7 : "n/a"}')
   else
     # Callsign was not found in either csv file
     # Last resort: Look up country based on callsign prefix
