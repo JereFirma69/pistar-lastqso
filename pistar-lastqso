@@ -3158,6 +3158,10 @@ fnSHOW_CURRENT_CALL()
 
   trap fnWINCH WINCH
 
+  #Some debugging to see if the function is being called for a QSO, and what the values of the key variables are at this point.
+  echo "DEBUG ENTRY fnSHOW_CURRENT_CALL: MODE='${LOGREC_MODE}' FROM='${FROM}' SEARCH_FROM='${SEARCH_FROM}'" >&3
+  echo "DEBUG ENTRY: This function was called for a QSO" >&3
+
   #----------
   # Show our human-readable date/time
   echo -en "${SGR0}${DIM}${WHI}Date:${SGR0} ${BLU}${BOLD}${DATE}${SGR0}${WHI}\r"
