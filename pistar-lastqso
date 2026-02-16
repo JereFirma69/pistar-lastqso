@@ -3279,6 +3279,9 @@ fnSHOW_CURRENT_CALL()
       # ID branch
       CSV_RECORD="$(grep -E "^${SEARCH_FROM}," "${USERCSV}" | LC_ALL=C sort -u | head -1)"
     fi
+    
+    # DEBUG: show what we searched for and what we found
+    echo "DEBUG: SEARCH_FROM='${SEARCH_FROM}' | CSV_RECORD length=${#CSV_RECORD} | Record='${CSV_RECORD}'" >&3
   fi
   if [[ "${LOGREC_MODE}" != "DMR" ]]
   then
