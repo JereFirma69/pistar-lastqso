@@ -1,7 +1,7 @@
 # pistar-lastqso
 ## A Tool to Monitor DMR, YSF, D-STAR, NXDN, P25, and M17, on Pi-Star
 
-**As of version 3.22, M17 RF support has been added.  Users with an M17-capable radio are asked to give this version a good shakedown.  Please use the [Issues](https://github.com/kencormack/pistar-lastqso/issues) tab at the top of this page, to report any problems found.**
+**As of version 3.22, M17 RF support has been added.  Users with an M17-capable radio are asked to give this version a good shakedown.  Please use the [Issues](https://github.com/JereFirma69/pistar-lastqso/issues) tab at the top of this page, to report any problems found.**
 
 This program was written for the official pi-star version 4.1.4 and later only.  NO testing has been done, nor will it ever be done, with earlier versions.  Likewise, no third-party "enhanced" dashboards or other user assembled hotspot solutions are supported at this time.
 
@@ -12,7 +12,7 @@ Note: Some screenshots shown below may not always reflect the latest version, di
 ![Image](https://raw.githubusercontent.com/kencormack/pistar-lastqso/master/images/animation.gif)
 
 -------------------------------------------------------------------
-## See the [CHANGE_LOG](https://github.com/kencormack/pistar-lastqso/blob/main/CHANGE_LOG.md), for details of what's changed, in each version.
+## See the [CHANGE_LOG](https://github.com/JereFirma69/pistar-lastqso/blob/main/CHANGE_LOG.md), for details of what's changed, in each version.
 -------------------------------------------------------------------
 
 ## WPSD (W0CHP's Pi-Star successor) compatibility
@@ -23,35 +23,33 @@ This fork includes patches to run on WPSD:
 - Replaced `HostFilesUpdate.sh` grep with fallback (file removed in WPSD)
 - Safe history file sourcing to avoid temp file errors
 
-Install as usual with addition of: `sudo cp pistar-lastqso /usr/local/bin/ && sudo chmod +x /usr/local/bin/pistar-lastqso`
-
 Talkgroup names may show as numbers only (WPSD uses different host file management).
 
 ## Contents
-- **[About](https://github.com/kencormack/pistar-lastqso#about)**
-- **[Installation](https://github.com/kencormack/pistar-lastqso#installation)**
-- **[Updating](https://github.com/kencormack/pistar-lastqso#updating)**
-- **[Large Font Display of the Callsign and Talkgroup or DG-ID](https://github.com/kencormack/pistar-lastqso#large-font-display-of-the-callsign-and-talkgroup-or-dg-id)**
-- **[City, State, Country Lookups for Callsigns (DMR only)](https://github.com/kencormack/pistar-lastqso#city-state-country-lookups-for-callsigns-dmr-only)**
-- **[City, State, Country Lookups for Callsigns (Other Modes)](https://github.com/kencormack/pistar-lastqso#city-state-country-lookups-for-callsigns-other-modes)**
-- **[Maidenhead Grid Square Lookups for US Callsigns (All Modes)](https://github.com/kencormack/pistar-lastqso#maidenhead-grid-square-lookups-for-us-callsigns-all-modes)**
-- **[License Level Lookups for US Callsigns (All Modes)](https://github.com/kencormack/pistar-lastqso#license-level-lookups-for-us-callsigns-all-modes)**
-- **[Commandline Options](https://github.com/kencormack/pistar-lastqso#commandline-options)**
-- **[The Help Text](https://github.com/kencormack/pistar-lastqso#the-help-text)**
-- **[Daily Log Rotation](https://github.com/kencormack/pistar-lastqso#daily-log-rotation)**
-- **[User-Custom Talkgroup List (DMR only)](https://github.com/kencormack/pistar-lastqso#user-custom-talkgroup-list-dmr-only)**
-- **[QSO, Kerchunk, and MMDVM Error Counts](https://github.com/kencormack/pistar-lastqso#qso-kerchunk-and-mmdvm-error-and-warning-counts)**
-- **[More About the Large Font Support](https://github.com/kencormack/pistar-lastqso#more-about-the-large-font-support)**
-- **[One More Thing About Large Fonts](https://github.com/kencormack/pistar-lastqso#one-more-thing-about-large-fonts)**
-- **[Tracking Brandmeister Talkgroups](https://github.com/kencormack/pistar-lastqso#tracking-brandmeister-talkgroups)**
-- **[Replaying a Log](https://github.com/kencormack/pistar-lastqso#replaying-a-log)**
-- **[Sample Screenshots](https://github.com/kencormack/pistar-lastqso#sample-screenshots)**
-- **[Other Notes](https://github.com/kencormack/pistar-lastqso#other-notes)**
-- **[Getting Help](https://github.com/kencormack/pistar-lastqso#getting-help)**
-- **[License](https://github.com/kencormack/pistar-lastqso#license)**
-- **[Acknowledgements](https://github.com/kencormack/pistar-lastqso#acknowledgements)**
-- **[Disclaimer](https://github.com/kencormack/pistar-lastqso#disclaimer)**
-- **[Special Thanks](https://github.com/kencormack/pistar-lastqso#special-thanks)**
+- **[About](https://github.com/JereFirma69/pistar-lastqso#about)**
+- **[Installation](https://github.com/JereFirma69/pistar-lastqso#installation)**
+- **[Updating](https://github.com/JereFirma69/pistar-lastqso#updating)**
+- **[Large Font Display of the Callsign and Talkgroup or DG-ID](https://github.com/JereFirma69/pistar-lastqso#large-font-display-of-the-callsign-and-talkgroup-or-dg-id)**
+- **[City, State, Country Lookups for Callsigns (DMR only)](https://github.com/JereFirma69/pistar-lastqso#city-state-country-lookups-for-callsigns-dmr-only)**
+- **[City, State, Country Lookups for Callsigns (Other Modes)](https://github.com/JereFirma69/pistar-lastqso#city-state-country-lookups-for-callsigns-other-modes)**
+- **[Maidenhead Grid Square Lookups for US Callsigns (All Modes)](https://github.com/JereFirma69/pistar-lastqso#maidenhead-grid-square-lookups-for-us-callsigns-all-modes)**
+- **[License Level Lookups for US Callsigns (All Modes)](https://github.com/JereFirma69/pistar-lastqso#license-level-lookups-for-us-callsigns-all-modes)**
+- **[Commandline Options](https://github.com/JereFirma69/pistar-lastqso#commandline-options)**
+- **[The Help Text](https://github.com/JereFirma69/pistar-lastqso#the-help-text)**
+- **[Daily Log Rotation](https://github.com/JereFirma69/pistar-lastqso#daily-log-rotation)**
+- **[User-Custom Talkgroup List (DMR only)](https://github.com/JereFirma69/pistar-lastqso#user-custom-talkgroup-list-dmr-only)**
+- **[QSO, Kerchunk, and MMDVM Error Counts](https://github.com/JereFirma69/pistar-lastqso#qso-kerchunk-and-mmdvm-error-and-warning-counts)**
+- **[More About the Large Font Support](https://github.com/JereFirma69/pistar-lastqso#more-about-the-large-font-support)**
+- **[One More Thing About Large Fonts](https://github.com/JereFirma69/pistar-lastqso#one-more-thing-about-large-fonts)**
+- **[Tracking Brandmeister Talkgroups](https://github.com/JereFirma69/pistar-lastqso#tracking-brandmeister-talkgroups)**
+- **[Replaying a Log](https://github.com/JereFirma69/pistar-lastqso#replaying-a-log)**
+- **[Sample Screenshots](https://github.com/JereFirma69/pistar-lastqso#sample-screenshots)**
+- **[Other Notes](https://github.com/JereFirma69/pistar-lastqso#other-notes)**
+- **[Getting Help](https://github.com/JereFirma69/pistar-lastqso#getting-help)**
+- **[License](https://github.com/JereFirma69/pistar-lastqso#license)**
+- **[Acknowledgements](https://github.com/JereFirma69/pistar-lastqso#acknowledgements)**
+- **[Disclaimer](https://github.com/JereFirma69/pistar-lastqso#disclaimer)**
+- **[Special Thanks](https://github.com/JereFirma69/pistar-lastqso#special-thanks)**
 
 -------------------------------------------------------------------
 ## About
@@ -78,7 +76,7 @@ pistar-lastqso is a tool to monitor DMR, YSF (including DMR2YSF and YSF2DMR cros
 **In Addition:**
 - Any MMDVM errors or warnings appearing in the log while the tool is monitoring
 
-As several of the modes do not require that users be registered, there is no single source for Name or QTH data for most users.  The script therefore assumes that the Callsign owner may also have either a registered DMR ID or NXDN ID number.  On the chance that they do, **pistar-lastqso** first attempts to find the Callsign's name and QTH info in the DMR **user.csv** file, then PI-STAR's **NXDN.csv** file.  If the Callsign is not found in either of those files, as a last resort, it then calls upon the perl script **dxcc.pl** and it's **cty.dat** file.  As the first two data sources generally contain the Callsign's Name, City, State, and Country info, they are tried first.  The **dxcc.pl** script, and it's **cty.dat** file, can only determine the Country that issued the Callsign, based on the Callsign's prefix.  The Callsign's Name will remain unresolved.  (Lookups with **dxcc.pl** can be disabled if desired, with the "-D|--DXCC" options - see **[the Help text](https://github.com/kencormack/pistar-lastqso#the-help-text)** for details.)
+As several of the modes do not require that users be registered, there is no single source for Name or QTH data for most users.  The script therefore assumes that the Callsign owner may also have either a registered DMR ID or NXDN ID number.  On the chance that they do, **pistar-lastqso** first attempts to find the Callsign's name and QTH info in the DMR **user.csv** file, then PI-STAR's **NXDN.csv** file.  If the Callsign is not found in either of those files, as a last resort, it then calls upon the perl script **dxcc.pl** and it's **cty.dat** file.  As the first two data sources generally contain the Callsign's Name, City, State, and Country info, they are tried first.  The **dxcc.pl** script, and it's **cty.dat** file, can only determine the Country that issued the Callsign, based on the Callsign's prefix.  The Callsign's Name will remain unresolved.  (Lookups with **dxcc.pl** can be disabled if desired, with the "-D|--DXCC" options - see **[the Help text](https://github.com/JereFirma69/pistar-lastqso#the-help-text)** for details.)
 
 **Note #1:**
 *DMR Talker Alias data is shown, only if present and complete.  Kerchunkers don't stick around long enough for TA data to be gathered.  Partial TA data (or that which is received as empty/null) is not shown.*
@@ -100,15 +98,63 @@ Maidenhead Grid Square look-ups are only possible with US Callsigns at this time
 
 Likewise, FCC license level lookups are only available for US Callsigns.  Display of a Callsign's FCC license level requires use of the "-F|--FCC" commandline option (see the help text, below.)
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Installation
+
+### For WPSD users
+
+WPSD is designed as an "appliance" with **strict filesystem management**:
+
+- Directories like `/usr/local/bin` and `/usr/local/sbin` are **core/managed locations** owned by WPSD itself.
+
+- When WPSD performs updates (automatic background, dashboard "Update" button, `sudo wpsd-update`, reboot with pending updates, etc.), it **overwrites or cleans** contents in those directories.
+
+- Anything you manually placed there (including our `pistar-lastqso` copy) gets **blown away** during updates or service restarts.
+
+- This is intentional WPSD behavior — the official docs explicitly warn against installing third-party stuff in `/usr/local/bin` or `/usr/local/sbin`.
+
+### Permanent solution — move it to a safe location
+
+WPSD recommends using `/opt/` for third-party/unmanaged software (it's not touched during updates).
+
+Do this once (in a writable session):
+
+```
+1. Make root writable (if not already)
+  $ sudo mount -o remount,rw /
+
+2. Create safe install directory
+  $ sudo mkdir -p /opt/pistar-lastqso
+
+3. Copy files there (from your git clone or wherever the source is)
+  $ cd ~/pistar-lastqso   
+  (adjust this if your clone is elsewhere)
+
+  $ sudo cp pistar-lastqso dxcc.pl /opt/pistar-lastqso/
+  
+  $ sudo chmod +x /opt/pistar-lastqso/pistar-lastqso /opt/pistar-lastqso/dxcc.pl
+
+4. Create a symlink in a safe PATH location (or add /opt/pistar-lastqso to PATH)
+
+  $ sudo ln -sf /opt/pistar-lastqso/pistar-lastqso  usr/local/bin/pistar-lastqso
+
+Alternative (better long-term): add to PATH permanently (only if symlink feels hacky)
+
+  $ if ! grep -q "/opt/pistar-lastqso" ~/.bashrc; then echo 'export PATH="$PATH:/opt/pistar-lastqso"' >> ~/.bashrc; fi; source ~/.bashrc
+```
+If you don't know what you are doing, just copy and paste these commands in your ssh terminal (without the $ sign).
+
+### Main instalation
 
 **pistar-lastqso** comes with an "install" script.  To install **pistar-lastqso**, log in to your PI-STAR hotspot with SSH, and perform the following steps:
 ```
 Put the PI-STAR filesystem in read-write mode...
   $ rpi-rw
+
+If that doesn't work (shows -bash: rpi-rw: command not found) try:
+  $ sudo mount -o remount,rw /
 
 Pull down the pistar-lastqso files...
   $ git clone https://github.com/JereFirma69/pistar-lastqso.git
@@ -134,8 +180,8 @@ You are now ready to monitor traffic from the commandline.
   $ pistar-lastqso
 ```
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Updating
 
@@ -145,6 +191,9 @@ To update, log in with SSH, 'cd' into the directory into which you originally cl
 ```
 Put the PI-STAR filesystem in read-write mode...
   $ rpi-rw
+
+If that doesn't work (shows -bash: rpi-rw: command not found) try:
+  $ sudo mount -o remount,rw /
 
 Change to the "pistar-lastqso" directory...
   $ cd pistar-lastqso
@@ -176,8 +225,8 @@ $ git reset --hard origin
 
 Once the "git pull" is successful, run the install script, as described above.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Large Font Display of the Callsign and Talkgroup or DG-ID
 One of the functions of the "install" script (see the "Installation" section, above) is to install the package "figlet" on your system.  With figlet, **pistar-lastqso** can display the Callsign and target, TG or DG-IG, as a large banner, at the beginning of each QSO.
@@ -186,8 +235,8 @@ If figlet is disabled (see the "Commandline options" section, below), the large 
 
 **SEE ADDITIONAL INFORMATION BELOW REGARDING LARGE-FONT SUPPORT**
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## City, State, Country Lookups for Callsigns (DMR only)
 
@@ -197,39 +246,39 @@ If the **user.csv** file is already present on your hotspot, but is older than 7
 
 **pistar-lastqso** uses the **user.csv** file to display the "City", "State", and "Country" data related to the Callsign.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## City, State, Country Lookups for Callsigns (Other Modes)
 
 For other modes, pistar-lastqso will attempt to find QTH info in the DMR **user.csv** file, then PI-STAR's **NXDN.csv** file, on the likelihood that a YSF, D-Star, M17, or P25 user is also a registered DMR or NXDN user.  If the Callsign is not found in either of those files, it then calls upon the perl script **dxcc.pl** and it's **cty.dat** file.  As the first two data sources generally contain City, State, and Country info, they are tried first.
 
-The **dxcc.pl** script, and it's **cty.dat** file, can only determine the Country that issued the Callsign, based on the Callsign's prefix.  (Lookups with **dxcc.pl** can be disabled if needed, with the "-D|--DXCC" options - see **[the Help text](https://github.com/kencormack/pistar-lastqso#the-help-text)** for details.)
+The **dxcc.pl** script, and it's **cty.dat** file, can only determine the Country that issued the Callsign, based on the Callsign's prefix.  (Lookups with **dxcc.pl** can be disabled if needed, with the "-D|--DXCC" options - see **[the Help text](https://github.com/JereFirma69/pistar-lastqso#the-help-text)** for details.)
 
 Upon first run, **pistar-lastqso** will download the latest version of the **cty.dat** file from https://www.country-files.com/category/big-cty/
 
 If the **cty.dat** file is already present on your hotspot, but is older than 30 days, **pistar-lastqso** will update the file to it's latest version automatically.  You can also force an update to the latest version at any time, using the "-d|--dat" commandline option.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Maidenhead Grid Square Lookups for US Callsigns (All Modes)
 If a callsign is determined to be one issued by the United States Federal Communications Commission (FCC), a query is sent to the remote server at **callook.info**, to determine the Maidenhead Grid Square location of the callsign.  The Grid Square, once retrieved, is cached locally to prevent multiple appearances by a given callsign resulting in needless, already-satisfied queries to the remote server.  The Grid Square location is displayed in parenthesis, directly following the QTH data described above.  Because this feature relies on queries to a remote server, and could potentially introduce lag due to network connectivity or other issues, this feature is disabled, by default.  To enable Maidenhead Grid Square lookups for US callsigns, use the "-g|--grid" commandline option, as described in the Help Text, below.
 
 *Occasionally, the remote **callook.info** server may return "Unknown", null, or other unexpected result.  This can happen when **callook.info** is unable to determine the latitude/longitude necessary to generate the Maidenhead location.  These negative results ("Unknown") are not cached.  When the remote issues are corrected, proper Grid Square responses will resume.*
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## License Level Lookups for US Callsigns (All Modes)
 Just as with Maidenhead Grid Square lookups described above, the script has the ability to lookup the level of licensing applicable to a US Callsign.  The license level, once received, is then cached locally, to prevent performing a lookup every time a given callsign appears.   Because this feature relies on queries to a remote server, and could potentially introduce lag due to network connectivity or other issues, this feature is disabled, by default.  To enable FCC License level lookups for US callsigns, use the "-F|--FCC" commandline option, as described in the Help Text, below.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Commandline Options
 
-**pistar-lastqso** supports a number of commandline options, as shown below, and described in **[the Help text](https://github.com/kencormack/pistar-lastqso#the-help-text)**.  Multiple options can be specified at the same time (though each option MUST be separated from the next, with a space).  For example, specifying "-c -n -t" (or "--csv --nobig --top") will download the latest updated **user.csv** file, disable the large font display of the Callsigns, and activate the non-scrolling information section at the top of the screen.
+**pistar-lastqso** supports a number of commandline options, as shown below, and described in **[the Help text](https://github.com/JereFirma69/pistar-lastqso#the-help-text)**.  Multiple options can be specified at the same time (though each option MUST be separated from the next, with a space).  For example, specifying "-c -n -t" (or "--csv --nobig --top") will download the latest updated **user.csv** file, disable the large font display of the Callsigns, and activate the non-scrolling information section at the top of the screen.
 
 **Valid Options and Parameters...**
 ```
@@ -251,8 +300,8 @@ Also, options that take a parameter (-f|--font, -t|--top, and -r|--replay) will 
   $ pistar-lastqso --top=10 --font=1 --replay=/tmp/logfile
 ```
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## The Help Text
 
@@ -538,15 +587,15 @@ PISTAR-LASTQSO - HELP
 (Cursor Up/Down keys to scroll, Page Up/Dn to page, Q to quit help.)
 ```
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Daily Log Rotation
 
 When **pistar-lastqso** is launched, it searches for the most recent MMDVM log in the **/var/log/pi-star** directory.  It then watches only that log, to perform it's monitoring.  When the MMDVMHost service opens a new day's log (at midnight UTC), this program detects this, and resumes monitoring, but with the new log.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## User-Custom Talkgroup List (DMR only)
 
@@ -578,8 +627,8 @@ You can also add certain 'private contact' IDs here that may not be listed.  Not
 9999999;0;PISTAR-SVC-KILL;PC9999999
 ```
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## QSO, Kerchunk, and MMDVM Error and Warning Counts
 
@@ -599,8 +648,8 @@ Finally, all four of the counters (QSO, Kerchunks, Errors, and Warnings) are res
 
 The commandline option "-e|--errors" will supress onscreen notification of errors during QSOs, but will NOT supress the more severe "warnings".  With or without that option, the total numbers of any errors or warnings detected, will be displayed at program exit.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## More About the Large Font Support
 
@@ -622,8 +671,8 @@ The "-f|--font" commandline option requires a numeric parameter to select betwee
   "-f 3" or "--font 3" will force figlet's "big" font
 ```
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## One More Thing About Large Fonts
 
@@ -651,19 +700,19 @@ The "emulator-dependent alternate charset" font can be tried by specifying "-f|-
 
 If you specify an invalid numeric parameter for the "-f|--font" option, **pistar-lastqso** will display a usage screen showing valid options and parameters, and then exit.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Replaying a Log
 
-Introduced with version 2.35, **pistar-lastqso** now has the ability to replay a log from the beginning, when the commandline option "-r|--replay" is specified.  Intended primarily for troubleshooting and development, this feature works best when an imported log is uploaded or copied to the hotspot's **/tmp** directory, as **/tmp** does not require root access, and does not require the pi-star filesystem to first be placed in read-write mode.  Importantly, **/tmp** is ram-based and volatile.  Any file uploaded there will be removed upon reboot.  See **[the Help text](https://github.com/kencormack/pistar-lastqso#the-help-text)** above, for details.
+Introduced with version 2.35, **pistar-lastqso** now has the ability to replay a log from the beginning, when the commandline option "-r|--replay" is specified.  Intended primarily for troubleshooting and development, this feature works best when an imported log is uploaded or copied to the hotspot's **/tmp** directory, as **/tmp** does not require root access, and does not require the pi-star filesystem to first be placed in read-write mode.  Importantly, **/tmp** is ram-based and volatile.  Any file uploaded there will be removed upon reboot.  See **[the Help text](https://github.com/JereFirma69/pistar-lastqso#the-help-text)** above, for details.
 
 Here is an example demonstrating the replay mode...
 
 ![Image](https://raw.githubusercontent.com/kencormack/pistar-lastqso/master/images/replay-demo.gif)
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Tracking Brandmeister Talkgroups
 
@@ -671,8 +720,8 @@ With the "-p|--poll" option, the script has the ability to track and display bot
 
 ![Image](https://raw.githubusercontent.com/kencormack/pistar-lastqso/master/images/bm-polling.gif)
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Sample Screenshots
 **Sample Screenshot:**
@@ -703,8 +752,8 @@ These are the 3 basic fonts supplied with the "figlet" package, along with the s
 
 ![Image](https://raw.githubusercontent.com/kencormack/pistar-lastqso/master/images/font-5.jpg)
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Other Notes
 
@@ -724,8 +773,8 @@ Key elements of the tool's operation include:
 
 The rest of the program is mainly parsing the log entries, managing the history and counters, and presenting the data on-screen.  The two most-used commands in the script (by vast margins), are "tput" and "echo".
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Getting Help
 
@@ -733,10 +782,10 @@ The rest of the program is mainly parsing the log entries, managing the history 
 
 **Likewise, please don't expect the PI-STAR forums to offer any assistance with pistar-lastqso.  They did not write this script, they do not bundle and distribute it with PI-STAR, and thus they cannot be expected to know anything about it.  (For these reasons, they don't allow discussion of 3rd-party add-ons/tools such as this on their forum.)**
 
-**WITH THAT HAVING BEEN SAID...** Every effort has been made to anticipate and address any questions users may have about **pistar-lastqso**, in this README.  Please read through the above carefully.  Should you have questions, or encounter a problem that is not addressed above, please use the "**[Issues](https://github.com/kencormack/pistar-lastqso/issues)**" tab at the top of this page, to report it.  There, you and others will be able to see if a problem has already been identified, and whether it's been resolved.
+**WITH THAT HAVING BEEN SAID...** Every effort has been made to anticipate and address any questions users may have about **pistar-lastqso**, in this README.  Please read through the above carefully.  Should you have questions, or encounter a problem that is not addressed above, please use the "**[Issues](https://github.com/JereFirma69/pistar-lastqso/issues)**" tab at the top of this page, to report it.  There, you and others will be able to see if a problem has already been identified, and whether it's been resolved.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## License
 
@@ -744,8 +793,8 @@ This program is free software; you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; including any implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the [GNU General Public License](http://www.gnu.org/licenses/) for more details.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Acknowledgements
 
@@ -765,8 +814,8 @@ The **ansi_shadow** font pre-dates figlet.  It appears to have been created usin
 
 **pistar-lastqso** itself was developed on a Raspberry Pi Zero WH Rev 1.1 (now upgraded to a Pi Zero 2 WH Rev 1.0) equipped with a 16GB eMMC module for reliability (and backed up via rsync, to USB storage).  Multiple generic Chinese MMDVM boards (including Duplex and Simplex models) have been used, along with TYT MD-UV390/GPS and YAESU FT-70DR handheld radios.  Development of **pistar-lastqso** began with PI-STAR 4.1.4, and has continued through all PI-STAR updates to date.  Testing the output is performed on 1.) a Lenovo Thinkpad laptop running Windows 10 Pro via SSH with PuTTY and Xming (an X-server), with PuTTY running as term-type TERM=xterm, or 2.) direct HDMI connection from the Pi to a 40" flatscreen (TERM=linux).
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Disclaimer
 
@@ -774,15 +823,15 @@ I am in no way partnered with the original creator of PI-STAR, Andy Taylor (MW0M
 
 **pistar-lastqso** is an independent endeavor, born of a desire to monitor a hotspot's radio traffic directly from the text-mode console, without need to involve a second system with web browser.  My goals are based entirely on displaying some basic elements in common with PI-STAR's "Dashboard" and other front-ends, while adding a little additional "humanizing" information (such as names and location data) that are lacking in those tools.  That is all.  There are no plans to develop this into a full-fledged text-mode management console for PI-STAR or the underlying MMDVMHost engine.  **pistar-lastqso** is, and will remain, merely a glorified logfile reader.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Special Thanks
 
 I want to offer a big "Vielen Dank!" to Wolfgang Wendefeuer (DC6LK), for the testing, input, discussion, ideas, and sample TG entries he provided.  Thanks also, to Cal Kutemeier (N9KO) for spotting a time-sensitive bug in the conversion of UTC date-stamps to local dates, Neil Redditch (M1CFK) for reporting a problem with Talker Alias, Gaute Alstad (LB6YD) for providing sample log entries with which to add D-Star RF log message support, and Jerry Kuhn (N8JLK) for reporting a problem parsing P25 RF transmissions and providing the sample log entries needed to correct.
 
-- **[Section Links](https://github.com/kencormack/pistar-lastqso#contents)**
-- **[Back to Files](https://github.com/kencormack/pistar-lastqso)**
+- **[Section Links](https://github.com/JereFirma69/pistar-lastqso#contents)**
+- **[Back to Files](https://github.com/JereFirma69/pistar-lastqso)**
 -------------------------------------------------------------------
 ## Stargazers over time
 [![Stargazers over time](https://starchart.cc/kencormack/pistar-lastqso.svg?variant=adaptive)](https://starchart.cc/kencormack/pistar-lastqso)

@@ -3172,7 +3172,7 @@ fnSHOW_CURRENT_CALL()
   # For this, and the QTH lookups further down, we groom
   # the incoming ${FROM}, to isolate just the callsign.
   # For example, many YSF users will send things like
-  # "9A3COX-DORIAN" or "9A3COX/DORIAN".  So we isolate just
+  # "9A3COX-Dorian" or "9A3COX/Dorian".  So we isolate just
   # the "9A3COX" callsign, to perform our lookups.
   SEARCH_FROM="$(fnCHOP_CALL "${FROM}")"
 
