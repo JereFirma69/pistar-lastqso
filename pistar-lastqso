@@ -409,8 +409,15 @@ MY_CALLSIGN="${MY_CALLSIGN#*=}"
 DMRIDS="$(grep -A 2 "^\[DMR Id Lookup\]" /etc/mmdvmhost | grep "^File")"
 DMRIDS="${DMRIDS#*=}"
 
-TGLIST="$(grep "^TGLISTBM=" /usr/local/sbin/HostFilesUpdate.sh)"
-TGLIST="${TGLIST#*=}"
+# Old Pi-Star only - disabled for WPSD
+#TGLIST="$(grep "^TGLISTBM=" /usr/local/sbin/HostFilesUpdate.sh)"
+#TGLIST="${TGLIST#*=}"
+# Fallback: use common WPSD/updated Pi-Star location if it exists, or empty
+if [ -f "/usr/local/etc/TGList_BM.txt" ]; then
+    TGLIST="/usr/local/etc/TGList_BM.txt"
+else
+    TGLIST=""
+fi
 
 # Unlike the two files above, all of pi-star's references to this file are
 # hard-coded, so I am safe to set this variable directly to the filename.
@@ -1203,7 +1210,8 @@ fnTOP_DATA()
   MODEM_PORT="${CUT_ARRAY[2]}"
   unset CUT_ARRAY
 
-  PLATFORM="$(platformDetect.sh)"
+  # PLATFORM="$(platformDetect.sh)" -> Stupid fix just hardcoding the platform to be "Raspberry Pi"
+  PLATFORM="Raspberry Pi"
 
   #----------
   # GATHER LINE 3 DATA...
@@ -5951,7 +5959,12 @@ do
 
   #----------
   # Load the current history...
-  . "${HISTORY_FILE}"
+  # Instead of this -> . "${HISTORY_FILE}" -> we do the next code to avoid an error message if the file doesn't exist yet.
+  if [ -f "${HISTORY_FILE}" ]; then
+    . "${HISTORY_FILE}"
+  else
+    echo "# History file created $$   (date)" > "${HISTORY_FILE}"
+  fi
 
   # Push all the entries one position later, in the list.
   # This opens the first position for the restart indicator.
