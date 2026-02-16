@@ -15,6 +15,18 @@ Note: Some screenshots shown below may not always reflect the latest version, di
 ## See the [CHANGE_LOG](https://github.com/kencormack/pistar-lastqso/blob/main/CHANGE_LOG.md), for details of what's changed, in each version.
 -------------------------------------------------------------------
 
+## WPSD (W0CHP's Pi-Star successor) compatibility
+
+This fork includes patches to run on WPSD:
+
+- Commented out `platformDetect.sh` call (not present in WPSD)
+- Replaced `HostFilesUpdate.sh` grep with fallback (file removed in WPSD)
+- Safe history file sourcing to avoid temp file errors
+
+Install as usual with addition of: `sudo cp pistar-lastqso /usr/local/bin/ && sudo chmod +x /usr/local/bin/pistar-lastqso`
+
+Talkgroup names may show as numbers only (WPSD uses different host file management).
+
 ## Contents
 - **[About](https://github.com/kencormack/pistar-lastqso#about)**
 - **[Installation](https://github.com/kencormack/pistar-lastqso#installation)**
@@ -99,7 +111,7 @@ Put the PI-STAR filesystem in read-write mode...
   $ rpi-rw
 
 Pull down the pistar-lastqso files...
-  $ git clone https://github.com/kencormack/pistar-lastqso.git
+  $ git clone https://github.com/JereFirma69/pistar-lastqso.git
 
 Change to the "pistar-lastqso" directory that was just created...
   $ cd pistar-lastqso
