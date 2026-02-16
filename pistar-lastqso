@@ -3158,7 +3158,7 @@ fnSHOW_CURRENT_CALL()
 
   trap fnWINCH WINCH
 
-  #Some debugging to see if the function is being called for a QSO, and what the values of the key variables are at this point.
+  #Some debugging to see what data we have at this point
   echo "DEBUG ENTRY fnSHOW_CURRENT_CALL: MODE='${LOGREC_MODE}' FROM='${FROM}' SEARCH_FROM='${SEARCH_FROM}'" >&3
   echo "DEBUG ENTRY: This function was called for a QSO" >&3
 
@@ -4092,12 +4092,11 @@ fnDMR_MAIN()
     fi
 
     #----------
-    # If call was less than 2 secs,
-    # and we know who it was from,
-    # then call it a kerchunk.
-    # Responses such as "disconnected",
-    # received with a 4000 disconnect
-    # are not counted.
+    # ALWAYS show full details (including QTH) for every voice QSO
+    fnDMR_SHOW_CURRENT_CALL
+
+    #----------
+    # If call was less than 2 secs, mark as kerchunk and count it
     if [[ -n "${FROM}" ]] && [[ -n "$(echo "${SECS}" | awk '$1 <2.0{print}')" ]]
     then
       . "${COUNT_FILE}"
@@ -4141,12 +4140,11 @@ fnDMR_MAIN()
     echo -en "${DIM}Loss:${SGR0} ${LOSS_COLOR}${BOLD}${LOSS}%${SGR0}${WHI}\r"
 
     #----------
-    # If call was less than 2 secs,
-    # and we know who it was from,
-    # then call it a kerchunk.
-    # Responses such as "disconnected",
-    # received with a 4000 disconnect
-    # are not counted.
+    # Always show full details (including QTH) for watchdog timeout QSOs too
+    fnDMR_SHOW_CURRENT_CALL
+
+    #----------
+    # If call was less than 2 secs, mark as kerchunk and count it
     if [[ -n "${FROM}" ]] && [[ -n "$(echo "${SECS}" | awk '$1 <2.0{print}')" ]]
     then
       . "${COUNT_FILE}"
