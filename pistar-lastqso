@@ -2684,9 +2684,9 @@ fnDMR_CSV_SEARCH()
     COUNTRY=""
   fi
   # If any fields came back empty, set a default of "n/a" (not available)
-  CITY="${CITY:-'n/a'}"
-  STATE="${STATE:-'n/a'}"
-  COUNTRY="${COUNTRY:-'n/a'}"
+  CITY="${CITY:-n/a}"
+  STATE="${STATE:-n/a}"
+  COUNTRY="${COUNTRY:-n/a}"
 
   #----------
   if [[ "${COUNTRY}" = "United States" ]] && [[ "${GRID}" = "1" ]]
@@ -3372,9 +3372,9 @@ fnSHOW_CURRENT_CALL()
   fi
 
   # If any fields came back empty, set a default of "n/a" (not available)
-  CITY="${CITY:-'n/a'}"
-  STATE="${STATE:-'n/a'}"
-  COUNTRY="${COUNTRY:-'n/a'}"
+  CITY="${CITY:-n/a}"
+  STATE="${STATE:-n/a}"
+  COUNTRY="${COUNTRY:-n/a}"
 
   #----------
   if [[ "${COUNTRY}" = "United States" ]] && [[ "${GRID}" = "1" ]]
@@ -3483,6 +3483,13 @@ fnDMR_SHOW_CURRENT_CALL()
   fi
   echo -en "${DIM}ID #:${SGR0} ${MAG}${BOLD}${DMR_ID}${SGR0}${WHI}\r"
   tput cuf 18
+
+  #----------
+  # Ensure defaults are set even if fnDMR_CSV_SEARCH was never called
+  # (e.g. user.csv missing, or callsign not found in DMRIds.dat)
+  CITY="${CITY:-n/a}"
+  STATE="${STATE:-n/a}"
+  COUNTRY="${COUNTRY:-n/a}"
 
   #----------
   # Show location details from the user.csv file
@@ -3660,7 +3667,7 @@ fnDOWNLOAD_NXDNCSV()
         sleep 2
       else
         echo "Applying the updated file..."
-        if sudo mv "${NXDNCSV}.tmp" "${NXDNCSV}" && sudo chown pi-star.pi-star "${NXDNCSV}"
+        if sudo mv "${NXDNCSV}.tmp" "${NXDNCSV}" && sudo chown pi-star:pi-star "${NXDNCSV}"
         then
           echo "Update complete."
         else
@@ -3699,7 +3706,7 @@ fnDOWNLOAD_USERCSV()
         sleep 2
       else
         echo "Applying the updated file..."
-        if sudo mv "${USERCSV}.tmp" "${USERCSV}" && sudo chown pi-star.pi-star "${USERCSV}"
+        if sudo mv "${USERCSV}.tmp" "${USERCSV}" && sudo chown pi-star:pi-star "${USERCSV}"
         then
           echo "Update complete."
         else
@@ -3744,7 +3751,7 @@ fnDOWNLOAD_CTYDAT()
         else
           echo "Applying the updated file..."
           sudo unzip /tmp/bigctydir/bigcty.zip -d /tmp/bigctydir > /dev/null 2>&1
-          if sudo cp /tmp/bigctydir/cty.dat "${CTYDAT}" && sudo chown pi-star.pi-star "${CTYDAT}"
+          if sudo cp /tmp/bigctydir/cty.dat "${CTYDAT}" && sudo chown pi-star:pi-star "${CTYDAT}"
           then
             sudo rm -r /tmp/bigctydir 2>/dev/null
             echo "Update complete."
