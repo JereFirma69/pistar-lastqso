@@ -2656,7 +2656,7 @@ fnDMR_CSV_SEARCH()
   # Fields in the file:
   # RADIO_ID,CALLSIGN,FIRST_NAME,LAST_NAME,CITY,STATE,COUNTRY
   # We want the last three.
-  CSV_RECORD="$(grep ",${CSV_CALLSIGN}," "${USERCSV}" | LC_ALL=C sort -u | head -1)"
+  CSV_RECORD="$(grep ",${CSV_CALLSIGN}," "${USERCSV}" | tr -d '\r' | LC_ALL=C sort -u | head -1)"
 
   # I've seen someone using the Malaysian Country Code of 5020386 as their
   # DMR ID, so the log contained only that number (not a callsign), thus
@@ -2668,7 +2668,7 @@ fnDMR_CSV_SEARCH()
   # for the DMR ID number, rather than the callsign.
   if [[ "${CSV_RECORD}" = "" ]]
   then
-    CSV_RECORD="$(grep "^${CSV_CALLSIGN}," "${USERCSV}" | LC_ALL=C sort -u | head -1)"
+    CSV_RECORD="$(grep "^${CSV_CALLSIGN}," "${USERCSV}" | tr -d '\r' | LC_ALL=C sort -u | head -1)"
   fi
 
   if [[ "${CSV_RECORD}" != "" ]]
@@ -3180,10 +3180,10 @@ fnSHOW_CURRENT_CALL()
   if ! [[ "${SEARCH_FROM}" =~ ^[0-9]+$ ]]
   then
     # the "From" contains letters (a callsign)
-    FROM_NAME="$(grep ",${SEARCH_FROM}," "${NXDNCSV}" "${USERCSV}" | tail -1)"
+    FROM_NAME="$(grep ",${SEARCH_FROM}," "${NXDNCSV}" "${USERCSV}" | tr -d '\r' | tail -1)"
   else
     # the "From" is numeric only (not a callsign)
-    FROM_NAME="$(grep "^${SEARCH_FROM}," "${NXDNCSV}" "${USERCSV}" | tail -1)"
+    FROM_NAME="$(grep "^${SEARCH_FROM}," "${NXDNCSV}" "${USERCSV}" | tr -d '\r' | tail -1)"
   fi
   IFS=','; CUT_ARRAY=(${FROM_NAME}); unset IFS;
   FROM_NAME="${CUT_ARRAY[2]}"
@@ -3269,10 +3269,10 @@ fnSHOW_CURRENT_CALL()
     if ! [[ "${SEARCH_FROM}" =~ ^[0-9]+$ ]]
     then
       # the "From" contains letters (a callsign)
-      CSV_RECORD="$(grep ",${SEARCH_FROM}," "${USERCSV}" | LC_ALL=C sort -u | head -1)"
+      CSV_RECORD="$(grep ",${SEARCH_FROM}," "${USERCSV}" | tr -d '\r' | LC_ALL=C sort -u | head -1)"
     else
       # the "From" is numeric only (not a callsign)
-      CSV_RECORD="$(grep "^${SEARCH_FROM}," "${USERCSV}" | LC_ALL=C sort -u | head -1)"
+      CSV_RECORD="$(grep "^${SEARCH_FROM}," "${USERCSV}" | tr -d '\r' | LC_ALL=C sort -u | head -1)"
     fi
   fi
   if [[ "${LOGREC_MODE}" != "DMR" ]]
@@ -3285,10 +3285,10 @@ fnSHOW_CURRENT_CALL()
       if ! [[ "${SEARCH_FROM}" =~ ^[0-9]+$ ]]
       then
         # the "From" contains letters (a callsign)
-        CSV_RECORD="$(grep ",${SEARCH_FROM}," "${NXDNCSV}" | LC_ALL=C sort -u | head -1)"
+        CSV_RECORD="$(grep ",${SEARCH_FROM}," "${NXDNCSV}" | tr -d '\r' | LC_ALL=C sort -u | head -1)"
       else
         # the "From" is numeric only (not a callsign)
-        CSV_RECORD="$(grep "^${SEARCH_FROM}," "${NXDNCSV}" | LC_ALL=C sort -u | head -1)"
+        CSV_RECORD="$(grep "^${SEARCH_FROM}," "${NXDNCSV}" | tr -d '\r' | LC_ALL=C sort -u | head -1)"
       fi
     fi
   fi
